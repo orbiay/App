@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+    }
+    
+    h2 {
+      text-align: center;
+    }
+    
+    .button-group {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .button-group button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .button-group button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome!</h2>
+    <div class="button-group">
+      <button onclick="location.href='/auth/signin'">Sign In</button>
+      <button onclick="location.href='/auth/signup'">Sign Up</button>
+    </div>
+  </div>
+</body>
+</html>

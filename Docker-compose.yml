@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  nestjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    container_name: nestjs
+    depends_on:
+      - postgres
+    command: sh -c "npm ci && npm run build && npm run start:prod"
+    networks:
+      - app-network
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    container_name: my-postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: mydb
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
