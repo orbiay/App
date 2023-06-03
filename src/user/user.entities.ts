@@ -11,6 +11,8 @@ export class User
     email:String;
     @Column()
     username:String;
-    @Column()
+    @Column({default:'Oauth'})
     password:String
+    @Column({default:'none'})
+    image:String;
 }

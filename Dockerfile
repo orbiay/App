@@ -15,6 +15,7 @@ RUN npm install pg typeorm
 RUN npm install @nestjs/serve-static serve-static
 RUN npm install path
 RUN npm install passport-local @nestjs/passport
+RUN npm install @nestjs/passport passport-google-oauth20
 
 COPY . .
 COPY ./script.sh .
