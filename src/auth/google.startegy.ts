@@ -13,21 +13,12 @@ export class GoogleStrategy extends PassportStrategy(Strategy,'google'){
         // Access the tokens
         console.log('Access Token:', accessToken);
         console.log('Refresh Token:', refreshToken);
-      
-        // Perform additional operations with the tokens
-        // For example, you can validate the tokens, store them, or make requests to Google APIs using the tokens
-      
-        // Process the user's profile information
         const {  name, emails ,photos} = profile;
         const user = {
-          username:name.giveName,
+          username:name,
           email: emails[0].value, 
           image:photos[0].value,
         };
-        
-        // Return the authenticated user
-
-        console.log("user: " + user.image);
         return user;
       }
 }

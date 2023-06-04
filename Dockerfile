@@ -16,6 +16,7 @@ RUN npm install @nestjs/serve-static serve-static
 RUN npm install path
 RUN npm install passport-local @nestjs/passport
 RUN npm install @nestjs/passport passport-google-oauth20
+RUN npm install passport-42
 
 COPY . .
 COPY ./script.sh .

@@ -38,13 +38,37 @@ export class googleController{
     constructor(private readonly authservice:AuthService){}
     @Get('google')
     @UseGuards(AuthGuard('google'))
-    googlelogin(){}
+    googlelogin(){
+        console.log("Auth/google");
+    }
 
 
     @Get('from-google')
     @UseGuards(AuthGuard('google'))
     async googleloginredirect(@Req() req){
+        console.log("Auth/Callback");
         const user = await req.user;
+        //user.name = req.user.givenName;
+        //console.log(user.name.givenName);
+        return await this.authservice.create_Oauth(user);
+    }
+}
+@Controller('auth')
+export class fortytwo_Controller{
+    constructor(private readonly authservice:AuthService){}
+    @Get('42')
+    @UseGuards(AuthGuard('42'))
+    googlelogin(){
+        console.log("Auth/42");
+    }
+
+
+    @Get('from-42')
+    @UseGuards(AuthGuard('42'))
+    async fortytwo_loginredirect(@Req() req){
+        console.log("CallBack");
+        const user = await req.user;
+        console.log(user);
         return await this.authservice.create_Oauth(user);
     }
 }
