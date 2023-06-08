@@ -1,12 +1,20 @@
-import { Controller, Get, Res } from '@nestjs/common';
+import { Controller, Get, Req, Res, UseGuards } from '@nestjs/common';
 import { AppService } from './app.service';
-import { Response } from 'express';
+import { Response ,Request} from 'express';
+import { TokenGuard } from './auth/guards';
+
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
 
   @Get()
-  default(@Res() res:Response){
-    res.sendFile('/app/views/index.html');
+  @UseGuards(TokenGuard)
+  default(@Res() res:Response,@Req() req:Request){
+    const user = (req as any).user;
+    console.log(user);
+    if (user.status == 'unauthorized')
+        res.sendFile('/app/views/index.html');
+    if(user.status == 'authorized')
+        res.sendFile('/app/views/home.html');
+    return user;
   }
 }

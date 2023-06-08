@@ -18,6 +18,10 @@ export class UserDto {
         this.password = 'Oauth';
     }
 }
+export class jwtDTO{
+    username:String;
+    email:String;
+}
 // export class UserDtosave {
 //     username:String;
 //     email:String;

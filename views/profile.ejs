@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+  <style>
+    /* Define your styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 20px;
+    }
+    .profile {
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 500px;
+    }
+    .profile h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .profile p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <h1>User Profile</h1>
+    <p><strong>Name:</strong> <%= user.name %></p>
+    <p><strong>Email:</strong> <%= user.email %></p>
+    <p><strong>Age:</strong> <%= user.age %></p>
+    <!-- Add more profile information as needed -->
+  </div>
+</body>
+</html>

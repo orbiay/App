@@ -1,3 +1,3 @@
 #!/bin/bash
-sleep 3
-npm start
+
+nest start --watch

@@ -17,6 +17,10 @@ RUN npm install path
 RUN npm install passport-local @nestjs/passport
 RUN npm install @nestjs/passport passport-google-oauth20
 RUN npm install passport-42
+RUN npm install speakeasy
+RUN npm install passport passport-google-oauth20 nodemailer
+RUN npm install jsonwebtoken
+RUN npm install @nestjs/jwt
 
 COPY . .
 COPY ./script.sh .

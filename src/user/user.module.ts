@@ -8,7 +8,7 @@ import { User } from './user.entities';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'postgres', // Use the service name from your docker-compose.yml
+      host: 'my-postgres', // Use the service name from your docker-compose.yml
       port: 5432,
       username: 'admin',
       password: 'pass',
