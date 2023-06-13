@@ -48,7 +48,7 @@ export class TokenGuard implements CanActivate {
       if (await this.jwtToken.verify(token)) {
         console.log('Token is valid');
         //Object.defineProperty(req, 'user', { value: { status: 'authorized', message:'token valid' } });
-        req.user = { status: 'authorized', message: 'token valid' };
+        req.user = { status: 'authorized', message: 'token valid',token:token };
         return true;
       }
     }
@@ -56,7 +56,7 @@ export class TokenGuard implements CanActivate {
     console.log('Invalid or expired token');
     //res.sendFile('/app/views/login.html');
     console.log('im HERE ')
-    req.user = { status: 'unauthorized', message: 'token isn\'t valid' };
+    req.user = { status: 'unauthorized', message: 'token isn\'t valid',token:null };
     return true;
   }
 }

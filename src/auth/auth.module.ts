@@ -16,7 +16,7 @@ import { JwtService } from '@nestjs/jwt';
 @Module({
   imports:[UserModule,PassportModule.register({defaultStrategy: '42'}),JwtModule.register({
     secret: 'k9vL9fr02UHQm1I7C5sO8bjdMnG3FpWz', 
-    signOptions: { expiresIn: '1m' }, 
+    signOptions: { expiresIn: '3m' }, 
   })],
   providers: [AuthService,LocalStrategy,UserService,GoogleStrategy,fortytwo_Strategy,TokenGuard,JWToken],
   controllers: [AuthController,googleController,fortytwo_Controller]

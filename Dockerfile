@@ -21,6 +21,8 @@ RUN npm install speakeasy
 RUN npm install passport passport-google-oauth20 nodemailer
 RUN npm install jsonwebtoken
 RUN npm install @nestjs/jwt
+RUN npm install --save @nestjs/platform-express ejs
+RUN npm install --save ejs @nestjs/platform-express express
 
 COPY . .
 COPY ./script.sh .

@@ -6,6 +6,7 @@ import { AuthModule } from './auth/auth.module';
 import { TokenGuard } from './auth/guards';
 import { JWToken } from './auth/jwt.service';
 import { JwtModule } from '@nestjs/jwt';
+import { UserService } from './user/user.service';
 
 @Module({
   imports: [AuthModule,UserModule,JwtModule.register({
@@ -13,6 +14,6 @@ import { JwtModule } from '@nestjs/jwt';
     signOptions: { expiresIn: '3m' }, 
   })],
   controllers: [AppController],
-  providers: [AppService,TokenGuard,JWToken],
+  providers: [AppService,TokenGuard,JWToken,UserService],
 })
 export class AppModule {}
